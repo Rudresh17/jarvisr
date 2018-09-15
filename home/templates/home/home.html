@@ -1,0 +1,33 @@
+{% extends "PersonalSite/layout.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Site</title>
+    <link rel="stylesheet" type="text/css" href="{% static "home/css/style.css" %}">
+</head>
+<body>
+
+</html>
+<h1 class="center-align">Welcome {{ name }} </h1>
+
+<h4 id="stock">Here are your Stock Status</h4>
+
+<h6>Ashok Leyland Price is {{price|safe}}</h6>
+
+<h1>Here are the Buisness News</h1> 
+<div class="news">
+{% for i in news %}
+
+   <p id="news">{{i}}</p>
+   {% endfor %}
+ </div>
+
+{% endblock %}
+
+
+</body>

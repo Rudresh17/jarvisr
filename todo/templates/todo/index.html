@@ -1,0 +1,55 @@
+{% extends "PersonalSite/layout.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Todo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'todo/css/style.css' %}"/>
+    <script src="main.js"></script>
+</head>
+<h1 class="center-align">Here is your Tasks</h1>
+
+<form action="http://localhost:8000/todo" method="POST">
+    {% csrf_token %}
+    <label for="{{ form.title.id_for_lable">Your Title:</label>
+    {{form.title|linebreaks}}
+    {{form.date|linebreaks}}
+   
+    <input type="submit" value="ADD TASK">
+
+</form>
+<br>
+<br>
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'todo/css/style.css' %}"/>
+
+<form action="http://localhost:8000/todo/show" method="POST">
+    {% csrf_token %}
+    <table style="width:100%">
+        <tr>
+            
+          <th>Title</th>
+          <th>Date</th>
+          {% for i in form %}
+        </tr>
+        <tr>
+        
+          <td>{{ i.title }}</td>
+          <td>{{ i.date }}</td>
+          
+          {% endfor %}
+        </tr>
+    
+<input type="submit"  value="Show All Tasks">
+</form>
+
+
+
+<br>
+
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Site</title>
+    <link rel="stylesheet" type="text/css" href="{% static "/login/css/style.css" %}">
+</head>
+<body>
+
+<form action="http://localhost:8000/home/" method="POST" id="form">
+    {% csrf_token %}
+    <br>
+    <div class="name">
+    <label for="{{ form.name.id_for_name}}">Your name :</label>
+    {{form.name }}
+    </div>
+    
+    <div class="email">
+    <label for="{{ form.name.id_for_email}}">Your Email :</label>
+    {{ form.email}}
+    </div>
+    <br>
+    <input type="submit" value="submit" id="button">
+
+
+</form>

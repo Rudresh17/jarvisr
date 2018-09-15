@@ -1,0 +1,14 @@
+
+.news
+{
+    
+    width: 52%;
+    height: 210px;
+    margin-left: 10px;
+    
+}
+body
+{
+   background-image: linear-gradinet(rgba(0,0,0,0.4),rgba(0,0,0,0.4)) , url(/home/static/home/images/back.jpg);
+    background-position: center;
+}
